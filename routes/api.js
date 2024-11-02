@@ -14,7 +14,7 @@ module.exports = function (app) {
       }
 
       const row = solver.getRowNum(coordinate[0]);
-      const col = coordinate[1];
+      const col = coordinate.slice(1);
 
       if (/[^1-9]/.test(value) || value > 9 || value < 1) {
         return res.json({ error: "Invalid value" });
